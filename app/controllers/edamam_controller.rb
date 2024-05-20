@@ -1,8 +1,8 @@
-class RecipesController < ApplicationController
+class EdamamController < ApplicationController
     # before_action :set_recipe, only: [:show]
   
     def recipes
-      @recipes = client.recipes(query: "chicken", addRecipeInstructions: true, addRecipeInformation: true, addRecipeNutrition: true)
+      @recipes = client.recipes(q: "chicken")
       render json: @recipes, each_serializer: RecipeSerializer
     rescue StandardError => e
       render json: { error: e.message }, status: :unprocessable_entity
@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     private
   
     def client
-      Spoonacular::V1::Client.new
+      Edamam::V1::Client.new
     end
   end
   

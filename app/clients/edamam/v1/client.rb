@@ -2,7 +2,7 @@ class Edamam::V1::Client
 
   BASE_URL = 'https://api.edamam.com'
   APP_ID = "d67966a5"
-  APP_KEY = "cb2f903846b30a6bd706dda9c82efca1	—"
+  APP_KEY = "cb2f903846b30a6bd706dda9c82efca1"
   TYPE = "public"
 
   def recipes(**params)
