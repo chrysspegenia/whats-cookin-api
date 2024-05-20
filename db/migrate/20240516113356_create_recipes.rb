@@ -7,8 +7,7 @@ class CreateRecipes < ActiveRecord::Migration[7.1]
       t.string :image_url, null: false
       t.string :public_code, null: false
       t.timestamps null: false
+      t.references :user, null: false, foreign_key: true
     end
-
-    add_reference :recipes, :user, null: false, foreign_key: true
   end
 end
